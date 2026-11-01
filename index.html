@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Quest | Modul Praktikum Pemrograman Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-ui="dashboard">
+
+    <div class="container">
+        
+        <!-- HEADER & STUDENT INFO -->
+        <div class="header-panel">
+            <div class="student-info">
+                <span class="info-badge" style="background-color: var(--pink);">Nama: Abie</span>
+                <span class="info-badge" style="background-color: var(--teal);">NIM: 241091750199</span>
+            </div>
+        </div>
+
+        <!-- NAVIGATION CONTAINER (TABS) -->
+        <div class="neo-box nav-container">
+            <div class="brand">
+                <div class="brand-icon"></div>
+                GAME QUEST // WEB MODULE
+            </div>
+            <div class="nav-links">
+                <div class="nav-link active-tab" onclick="openTab('part1', this)">Pertemuan 1 - 6</div>
+                <div class="nav-link" onclick="openTab('part2', this)">Pertemuan 7 - 10</div>
+                <div class="nav-link" onclick="openTab('part3', this)">Pertemuan 11 - 21</div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 1: PERTEMUAN 1 - 6 ==================== -->
+        <div id="part1" class="tab-content" style="display: block;">
+            <span class="section-label">Materi Dasar & Form Handling (1 - 6)</span>
+            
+            <!-- Pertemuan 1 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--blue); color: #fff;">Pertemuan 1: Pengantar Web</div>
+                <h3 style="margin-bottom: 1rem;">Pengertian dan Klasifikasi Website</h3>
+                <p style="margin-bottom: 1rem;">Website adalah sekumpulan halaman digital berisi teks, media visual, dan interaktif yang disimpan di web server dan dapat diakses publik melalui protokol HTTP/HTTPS. Website dibagi menjadi tiga klasifikasi utama:</p>
+                <ul class="lesson-list">
+                    <li><strong>Web Statis:</strong> Kontennya jarang berubah. Setiap perubahan informasi harus dilakukan dengan merombak script HTML secara manual (misal: landing page sederhana).</li>
+                    <li><strong>Web Dinamis:</strong> Dirancang dengan konten yang sering berubah secara otomatis, biasanya mengambil data dari database dan memiliki panel pengelolaan data khusus (misal: portal berita, e-commerce).</li>
+                    <li><strong>Web Interaktif:</strong> Memungkinkan terjadinya komunikasi dua arah antar pengguna (misal: forum online, jejaring sosial, portal dengan chat & komentar).</li>
+                </ul>
+                
+                <h3 style="margin-bottom: 0.5rem;">Perangkat Kerja & Pemrograman Web</h3>
+                <p>Pemrograman web ditulis menggunakan bahasa scripting (HTML, CSS, JS di client-side; PHP, Java, Python di server-side). Untuk menulis kodenya dibutuhkan text editor, seperti:</p>
+                <ul class="lesson-list" style="margin-bottom: 0;">
+                    <li><strong>Notepad++:</strong> Editor teks gratis yang sangat ringan untuk sistem operasi Windows.</li>
+                    <li><strong>VS Code:</strong> Editor modern besutan Microsoft yang sangat kaya akan ekstensi pembantu.</li>
+                    <li><strong>Sublime Text:</strong> Editor cepat dengan antarmuka minimalis dan fitur pencarian canggih.</li>
+                </ul>
+            </div>
+
+            <!-- Pertemuan 2 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--pink);">Pertemuan 2: Tag & Heading HTML</div>
+                <h3 style="margin-bottom: 1rem;">Struktur Dasar HTML & Elemen Konten</h3>
+                <p>Dokumen HTML disusun berdasarkan elemen-elemen tag pembuka dan penutup untuk memetakan konten di dalam browser web.</p>
+                
+                <div class="layout-split">
+                    <!-- Code Block -->
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>HTML Source Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-tag">&lt;html&gt;</span>
+<span class="token-tag">&lt;head&gt;</span>
+  <span class="token-tag">&lt;title&gt;</span>Struktur Dasar Pertama<span class="token-tag">&lt;/title&gt;</span>
+<span class="token-tag">&lt;/head&gt;</span>
+<span class="token-tag">&lt;body</span> <span class="token-attr">bgcolor</span>=<span class="token-string">"#FB7DA8"</span> <span class="token-attr">text</span>=<span class="token-string">"#000000"</span><span class="token-tag">&gt;</span>
+  Halo Dunia!<span class="token-tag">&lt;br&gt;</span>
+  Ini script pertamaku.<span class="token-tag">&lt;br&gt;</span>
+  <span class="token-tag">&lt;h1</span> <span class="token-attr">align</span>=<span class="token-string">"center"</span><span class="token-tag">&gt;</span>Judul Tengah<span class="token-tag">&lt;/h1&gt;</span>
+  <span class="token-tag">&lt;marquee</span> <span class="token-attr">bgcolor</span>=<span class="token-string">"#ffc567"</span> <span class="token-attr">width</span>=<span class="token-string">"100%"</span><span class="token-tag">&gt;</span>Teks Berjalan!<span class="token-tag">&lt;/marquee&gt;</span>
+<span class="token-tag">&lt;/body&gt;</span>
+<span class="token-tag">&lt;/html&gt;</span></code></pre>
+                        </div>
+                    </div>
+                    <!-- Explanation -->
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>&lt;html&gt;:</strong> Tag akar (root) untuk membungkus seluruh elemen dokumen HTML.</li>
+                            <li><strong>&lt;head&gt;:</strong> Menyimpan metadata halaman, seperti judul tab browser dan tautan CSS/JS.</li>
+                            <li><strong>&lt;body&gt;:</strong> Berisi konten visual utama yang tampil langsung di browser.</li>
+                            <li><strong>bgcolor & text:</strong> Atribut body untuk mengatur warna latar halaman dan warna teks dasar.</li>
+                            <li><strong>&lt;br&gt;:</strong> Line Break, digunakan untuk berpindah ke baris baru.</li>
+                            <li><strong>&lt;h1&gt; s/d &lt;h6&gt;:</strong> Membuat Heading (judul) dari yang terbesar (H1) ke terkecil (H6).</li>
+                            <li><strong>align="center":</strong> Atribut pemosisian teks agar berada di tengah.</li>
+                            <li><strong>&lt;marquee&gt;:</strong> Elemen tag bawaan untuk membuat teks berjalan secara otomatis.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Output Visual Simulasi:</div>
+                <div class="output-block" style="background-color: #fb7da8; color: #000000;">
+                    Halo Dunia!<br>
+                    Ini script pertamaku.<br>
+                    <h1 align="center" style="font-family: Arial, sans-serif; text-transform: none; margin: 10px 0;">Judul Tengah</h1>
+                    <marquee bgcolor="#ffc567" width="100%" style="font-weight: bold; border: 2px solid #000; padding: 2px; color: #000;">Teks Berjalan!</marquee>
+                </div>
+            </div>
+
+            <!-- Pertemuan 2 (Lanjutan) -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--pink);">Pertemuan 2 (Lanjutan): Tabel HTML</div>
+                <h3 style="margin-bottom: 1rem;">Pembuatan Baris, Kolom, & Spasi Tabel</h3>
+                <p>Tabel dalam HTML dibangun dengan kombinasi tag baris dan sel, serta didukung atribut pengatur rongga pembatas.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>HTML Table Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-tag">&lt;table</span> <span class="token-attr">border</span>=<span class="token-string">"2"</span> <span class="token-attr">cellspacing</span>=<span class="token-string">"4"</span> <span class="token-attr">cellpadding</span>=<span class="token-string">"8"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;tr&gt;</span>
+    <span class="token-tag">&lt;td&gt;</span>Baris 1, Kolom 1<span class="token-tag">&lt;/td&gt;</span>
+    <span class="token-tag">&lt;td&gt;</span>Baris 1, Kolom 2<span class="token-tag">&lt;/td&gt;</span>
+  <span class="token-tr">&lt;/tr&gt;</span>
+  <span class="token-tag">&lt;tr&gt;</span>
+    <span class="token-tag">&lt;td&gt;</span>Baris 2, Kolom 1<span class="token-tag">&lt;/td&gt;</span>
+    <span class="token-tag">&lt;td&gt;</span>Baris 2, Kolom 2<span class="token-tag">&lt;/td&gt;</span>
+  <span class="token-tr">&lt;/tr&gt;</span>
+<span class="token-tag">&lt;/table&gt;</span></code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>&lt;table&gt;:</strong> Tag pembuka untuk mendefinisikan pembuatan tabel.</li>
+                            <li><strong>&lt;tr&gt; (Table Row):</strong> Digunakan untuk mendeklarasikan baris baru pada tabel.</li>
+                            <li><strong>&lt;td&gt; (Table Data):</strong> Menampung kolom data individual di dalam baris tabel.</li>
+                            <li><strong>border="2":</strong> Memberikan ketebalan garis pembatas tabel.</li>
+                            <li><strong>cellspacing:</strong> Mengatur jarak rongga antar batas sel di dalam tabel.</li>
+                            <li><strong>cellpadding:</strong> Mengatur ruang antara tepi sel dengan konten di dalamnya.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Output Visual Simulasi:</div>
+                <div class="output-block" style="overflow-x: auto;">
+                    <table border="2" cellspacing="4" cellpadding="8" style="background-color: var(--bg-card); color: var(--text-main); font-family: inherit; border-color: var(--border-color); border-collapse: separate;">
+                        <tr>
+                            <td>Baris 1, Kolom 1</td>
+                            <td>Baris 1, Kolom 2</td>
+                        </tr>
+                        <tr>
+                            <td>Baris 2, Kolom 1</td>
+                            <td>Baris 2, Kolom 2</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pertemuan 3 & 4 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--teal);">Pertemuan 3 & 4: PHP Dasar</div>
+                <h3 style="margin-bottom: 1rem;">Deklarasi Variabel & Output Aritmatika PHP</h3>
+                <p>Variabel PHP diawali simbol dollar ($) dan bertipe dinamis. Operator standar digunakan untuk memproses kalkulasi matematika dasar.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>PHP Variable Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-comment">// Pembuka tag script PHP</span>
+<span class="token-keyword">&lt;?php</span>
+  <span class="token-attr">$nim</span> = <span class="token-string">"241091750199"</span>;
+  <span class="token-attr">$nama</span> = <span class="token-string">"Abie"</span>;
+  
+  <span class="token-attr">$angka1</span> = <span class="token-string">300</span>;
+  <span class="token-attr">$angka2</span> = <span class="token-string">50</span>;
+  <span class="token-attr">$hasil</span> = <span class="token-attr">$angka1</span> + <span class="token-attr">$angka2</span>;
+  
+  <span class="token-keyword">echo</span> <span class="token-string">"NIM  = "</span> . <span class="token-attr">$nim</span> . <span class="token-string">"&lt;br&gt;"</span>;
+  <span class="token-keyword">echo</span> <span class="token-string">"Nama = "</span> . <span class="token-attr">$nama</span> . <span class="token-string">"&lt;br&gt;"</span>;
+  <span class="token-keyword">echo</span> <span class="token-attr">$angka1</span> . <span class="token-string">" + "</span> . <span class="token-attr">$angka2</span> . <span class="token-string">" = "</span> . <span class="token-attr">$hasil</span>;
+<span class="token-keyword">?&gt;</span></code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>&lt;?php ... ?&gt;:</strong> Tag pembatas blok kode program PHP di dalam file server-side.</li>
+                            <li><strong>$ (Dollar Sign):</strong> Simbol wajib di depan setiap deklarasi variabel di PHP.</li>
+                            <li><strong>= (Assignment):</strong> Operator untuk memasukkan nilai ke dalam suatu variabel.</li>
+                            <li><strong>+ (Arithmetic):</strong> Melakukan operasi pertambahan aritmatika antara dua variabel angka.</li>
+                            <li><strong>echo:</strong> Konstruksi bahasa untuk menampilkan output teks ke layar browser.</li>
+                            <li><strong>. (Dot Concatenation):</strong> Operator penyambung (string concatenation) di PHP.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Output Simulasi Hasil:</div>
+                <div class="output-block" style="font-family: monospace; font-size: 1.1rem;">
+                    NIM = 241091750199<br>
+                    Nama = Abie<br>
+                    300 + 50 = 350
+                </div>
+            </div>
+
+            <!-- Pertemuan 5 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--yellow);">Pertemuan 5: Form Handling POST</div>
+                <h3 style="margin-bottom: 1rem;">Pengambilan Data Form Melalui Method POST</h3>
+                <p>Data input form dikirim ke server tanpa terlihat pada kolom URL menggunakan metode pengiriman POST.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>HTML & PHP Form Handling</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-tag">&lt;form</span> <span class="token-attr">action</span>=<span class="token-string">"proses.php"</span> <span class="token-attr">method</span>=<span class="token-string">"post"</span><span class="token-tag">&gt;</span>
+  Isikan Nama: <span class="token-tag">&lt;input</span> <span class="token-attr">type</span>=<span class="token-string">"text"</span> <span class="token-attr">name</span>=<span class="token-string">"nama"</span><span class="token-tag">&gt;</span>
+  Isikan No Telp: <span class="token-tag">&lt;input</span> <span class="token-attr">type</span>=<span class="token-string">"text"</span> <span class="token-attr">name</span>=<span class="token-string">"notelp"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;input</span> <span class="token-attr">type</span>=<span class="token-string">"submit"</span> <span class="token-attr">value</span>=<span class="token-string">"TAMPIL"</span><span class="token-tag">&gt;</span>
+<span class="token-tag">&lt;/form&gt;</span>
+
+<span class="token-comment">// proses.php:</span>
+<span class="token-keyword">&lt;?php</span>
+  <span class="token-attr">$nama</span> = <span class="token-attr">$_POST</span>[<span class="token-string">'nama'</span>];
+  <span class="token-attr">$telp</span> = <span class="token-attr">$_POST</span>[<span class="token-string">'notelp'</span>];
+  <span class="token-keyword">echo</span> <span class="token-string">"Nama Anda: "</span> . <span class="token-attr">$nama</span>;
+<span class="token-keyword">?&gt;</span></code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>method="post":</strong> Mengirimkan data form secara tertutup di dalam HTTP request payload.</li>
+                            <li><strong>action="proses.php":</strong> Menentukan berkas PHP target pemrosesan data form.</li>
+                            <li><strong>name="nama":</strong> Atribut nama input yang berfungsi sebagai kunci penanda saat diolah.</li>
+                            <li><strong>$_POST['...']:</strong> Variabel superglobal PHP untuk mengambil data yang dikirim dengan metode POST.</li>
+                            <li><strong>type="submit":</strong> Membuat tombol pemicu pengiriman data form.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Simulasi Form Interaktif:</div>
+                <div class="output-block">
+                    <form id="formSimPert5" style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px;" onsubmit="event.preventDefault(); submitFormPert5();">
+                        <div>
+                            <label style="font-weight: bold; margin-bottom: 0.25rem; display: block;">Isikan Nama:</label>
+                            <input type="text" id="iptNamaPert5" placeholder="Masukkan nama..." required>
+                        </div>
+                        <div>
+                            <label style="font-weight: bold; margin-bottom: 0.25rem; display: block;">Isikan No Telp:</label>
+                            <input type="text" id="iptTelpPert5" placeholder="Masukkan nomor telepon..." required>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button type="submit" class="btn btn-teal">Tampil</button>
+                            <button type="reset" class="btn btn-orange" onclick="document.getElementById('resPert5').style.display='none';">Batal</button>
+                        </div>
+                    </form>
+                    
+                    <div id="resPert5" style="margin-top: 1.5rem; display: none; background: var(--bg-body); border: 3px solid #000; padding: 1rem; box-shadow: 4px 4px 0px #000;">
+                        <h4 style="margin-bottom: 0.5rem; text-transform: uppercase;">Simulasi Hasil Pemrosesan PHP:</h4>
+                        <p><strong>Nama:</strong> <span id="outNamaPert5"></span></p>
+                        <p><strong>No Telp:</strong> <span id="outTelpPert5"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pertemuan 5 & 6 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--yellow);">Pertemuan 5 & 6: Form & Percabangan</div>
+                <h3 style="margin-bottom: 1rem;">Kombinasi Logika IF-ELSE & Evaluasi Nilai</h3>
+                <p>Mengkombinasikan form penangkapan nilai dengan operasi logika penentuan IP / predikat kelulusan berdasarkan pembobotan persentase.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>JavaScript Grade Logic</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-keyword">function</span> <span class="token-func">hitungIPK</span>() {
+  <span class="token-keyword">var</span> q = <span class="token-func">parseFloat</span>(document.fform.quis.value);
+  <span class="token-keyword">var</span> t = <span class="token-func">parseFloat</span>(document.fform.tugas.value);
+  <span class="token-keyword">var</span> na = (0.3 * q) + (0.7 * t);
+  <span class="token-keyword">var</span> ip = <span class="token-string">"E"</span>; <span class="token-keyword">var</span> ket = <span class="token-string">"Tidak Lulus"</span>;
+  
+  <span class="token-keyword">if</span> (na &gt; 80) {
+    ip = <span class="token-string">"A"</span>; ket = <span class="token-string">"Sangat Baik"</span>;
+  } <span class="token-keyword">else</span> <span class="token-keyword">if</span> (na &gt; 65) {
+    ip = <span class="token-string">"B"</span>; ket = <span class="token-string">"Baik"</span>;
+  } <span class="token-keyword">else</span> {
+    ip = <span class="token-string">"C"</span>; ket = <span class="token-string">"Cukup"</span>;
+  }
+  document.fform.grade.value = ip;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>parseFloat():</strong> Mengubah string angka berdesimal menjadi tipe data numerik float murni.</li>
+                            <li><strong>* dan +:</strong> Operator perkalian dan pertambahan untuk memproses kalkulasi nilai akhir berbobot.</li>
+                            <li><strong>if (kondisi):</strong> Mengeksekusi blok kode jika kondisi pertama terpenuhi.</li>
+                            <li><strong>else if (kondisi):</strong> Mengevaluasi alternatif kondisi kedua jika kondisi pertama tidak terpenuhi.</li>
+                            <li><strong>else:</strong> Blok kode penanganan jika seluruh persyaratan kondisi di atas tidak terpenuhi.</li>
+                            <li><strong>value:</strong> Mengatur atau mengambil muatan data nilai teks yang ada di dalam elemen input.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Operasional Simulasi Nilai Akhir (IP):</div>
+                <div class="output-block" style="background-color: var(--purple); color: #fff;">
+                    <div style="background-color: var(--bg-card); color: var(--text-main); border: 3px solid #000; padding: 1.5rem; box-shadow: 4px 4px 0px #000; max-width: 500px; margin: 0 auto;">
+                        <h4 style="text-align: center; margin-bottom: 1.5rem; text-transform: uppercase;">Evaluator Predikat Belajar</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <label style="font-weight: bold; font-size: 0.9rem;">Nilai Kuis (30%):</label>
+                                <input type="text" id="iptKuisSim" value="85" style="margin-top: 5px;">
+                            </div>
+                            <div>
+                                <label style="font-weight: bold; font-size: 0.9rem;">Nilai Tugas (70%):</label>
+                                <input type="text" id="iptTugasSim" value="75" style="margin-top: 5px;">
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-bottom: 1.5rem;">
+                            <button type="button" class="btn btn-yellow" onclick="hitungIPKSim()">Hitung Predikat</button>
+                        </div>
+                        <div style="border-top: 2px dashed #000; padding-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div>
+                                <label style="font-weight: bold; font-size: 0.85rem;">IP:</label>
+                                <input type="text" id="optIpSim" readonly style="background: var(--bg-body); margin-top: 5px; text-align: center;">
+                            </div>
+                            <div>
+                                <label style="font-weight: bold; font-size: 0.85rem;">Keterangan:</label>
+                                <input type="text" id="optKetSim" readonly style="background: var(--bg-body); margin-top: 5px; text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 2: PERTEMUAN 7 - 10 ==================== -->
+        <div id="part2" class="tab-content">
+            <span class="section-label">Perulangan, Pop-up Dialog, & CSS Layout (7 - 10)</span>
+            
+            <!-- Pertemuan 7 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--blue); color: #fff;">Pertemuan 7: Perulangan PHP</div>
+                <h3 style="margin-bottom: 1rem;">Perulangan Terstruktur dengan Statemen FOR</h3>
+                <p>Struktur perulangan digunakan untuk mengulang jalannya blok kode secara berulang sesuai batas iterasi numeris.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>PHP For Loop Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-keyword">&lt;?php</span>
+  <span class="token-keyword">for</span> (<span class="token-attr">$i</span> = <span class="token-string">1</span>; <span class="token-attr">$i</span> &lt;= <span class="token-string">5</span>; <span class="token-attr">$i</span>++) {
+    <span class="token-keyword">echo</span> <span class="token-string">"Loop Ke: "</span> . <span class="token-attr">$i</span> . <span class="token-string">"&lt;br&gt;"</span>;
+  }
+<span class="token-keyword">?&gt;</span></code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>for (...):</strong> Konstruksi loop utama yang menerima deklarasi awal, syarat batas, dan ekspresi langkah.</li>
+                            <li><strong>$i = 1:</strong> Inisialisasi awal variabel pencatat putaran (counter) bernilai 1.</li>
+                            <li><strong>$i &lt;= 5:</strong> Persyaratan logika batas perulangan (loop terus berjalan selama bernilai TRUE).</li>
+                            <li><strong>$i++ (Increment):</strong> Operasi penambahan nilai counter sebanyak 1 setiap putaran selesai.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Output Simulasi Teks:</div>
+                <div class="output-block" style="font-family: monospace; font-size: 1.1rem; line-height: 1.8;">
+                    Loop Ke: 1<br>
+                    Loop Ke: 2<br>
+                    Loop Ke: 3<br>
+                    Loop Ke: 4<br>
+                    Loop Ke: 5<br>
+                </div>
+            </div>
+
+            <!-- Pertemuan 8 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--pink);">Pertemuan 8: Dialog Pop-Up JS</div>
+                <h3 style="margin-bottom: 1rem;">Implementasi Prompt, Confirm, & Alert</h3>
+                <p>JavaScript menyediakan modul pop-up dialog bawaan untuk menerima inputan, konfirmasi keputusan, maupun notifikasi teks.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>JS Popups Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-keyword">var</span> user = <span class="token-func">prompt</span>(<span class="token-string">"Ketik nama anda:"</span>);
+<span class="token-keyword">var</span> status = <span class="token-func">confirm</span>(<span class="token-string">"Yakin ingin lanjut, "</span> + user + <span class="token-string">"?"</span>);
+
+<span class="token-keyword">if</span> (status == <span class="token-keyword">true</span>) {
+  <span class="token-func">alert</span>(<span class="token-string">"Selesai! Terima kasih."</span>);
+} <span class="token-keyword">else</span> {
+  <span class="token-func">alert</span>(<span class="token-string">"Aksi dibatalkan."</span>);
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>prompt(tanya):</strong> Membuka dialog box bermuatan kotak pengisian string input dari pengguna.</li>
+                            <li><strong>confirm(tanya):</strong> Memunculkan opsi dialog konfirmasi pilihan OKE (True) / BATAL (False).</li>
+                            <li><strong>alert(pesan):</strong> Jendela pemberitahuan sederhana berisi pesan peringatan satu arah.</li>
+                            <li><strong>== true:</strong> Memeriksa apakah status kembalian konfirmasi bernilai logis benar.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Jalankan Jendela Dialog Interaktif:</div>
+                <div class="output-block" style="text-align: center; background-color: var(--orange);">
+                    <button class="btn" style="background-color: #ffffff;" onclick="jalankanDialogSim()">Test Dialog Box</button>
+                </div>
+            </div>
+
+            <!-- Pertemuan 9 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--teal);">Pertemuan 9: Dasar CSS</div>
+                <h3 style="margin-bottom: 1rem;">Pengaturan Tampilan Visual Elemen HTML</h3>
+                <p>Mengatur properti presentasi dokumen HTML mulai dari pewarnaan, modifikasi garis, jenis font, hingga model link statis.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>CSS Style Sheet Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-comment">/* Mengubah tampilan tautan */</span>
+<span class="token-tag">a</span>.<span class="token-class">hello</span> {
+  <span class="token-keyword">color</span>: <span class="token-string">#552CB7</span>;
+  <span class="token-keyword">text-decoration</span>: <span class="token-string">none</span>;
+  <span class="token-keyword">font-weight</span>: <span class="token-string">bold</span>;
+}
+
+<span class="token-comment">/* Mengatur elemen list */</span>
+<span class="token-tag">li</span> {
+  <span class="token-keyword">list-style-type</span>: <span class="token-string">square</span>;
+  <span class="token-keyword">margin-bottom</span>: <span class="token-string">5px</span>;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>a.hello:</strong> Selector spesifik untuk merombak tag jangkar (&lt;a&gt;) berkategori class "hello".</li>
+                            <li><strong>color:</strong> Menentukan pewarnaan heksadesimal atau nama warna teks elemen bersangkutan.</li>
+                            <li><strong>text-decoration: none:</strong> Menghilangkan garis bawah default bawaan pada elemen link.</li>
+                            <li><strong>list-style-type:</strong> Merubah wujud simbol peluru (bullet) navigasi daftar berurutan.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Output Tampilan Render CSS:</div>
+                <div class="output-block" style="background: #ffffff; color: #000000; border: 3px solid #000;">
+                    <a href="#" class="simLinkCSS" style="color: #552CB7; text-decoration: none; font-weight: bold; font-size: 1.1rem;" onclick="event.preventDefault();">Hello World Link (No Underline)</a>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li style="list-style-type: square; margin-bottom: 5px;">Format List Bullet Kotak 1</li>
+                        <li style="list-style-type: square; margin-bottom: 5px;">Format List Bullet Kotak 2</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pertemuan 10 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--orange);">Pertemuan 10: CSS & Responsive Layout</div>
+                <h3 style="margin-bottom: 1rem;">Penyusunan Grid Fleksibel & Media Queries</h3>
+                <p>Media Queries digunakan untuk merubah struktur sekat elemen web secara dinamis menyesuaikan lebar layar viewport browser.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>CSS Responsive Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-comment">/* Struktur Grid Flex */</span>
+.<span class="token-class">wrapper</span> {
+  <span class="token-keyword">display</span>: <span class="token-string">flex</span>;
+  <span class="token-keyword">flex-wrap</span>: <span class="token-string">wrap</span>;
+}
+
+<span class="token-comment">/* Penyesuaian Tablet/Mobile */</span>
+<span class="token-keyword">@media screen</span> <span class="token-keyword">and</span> (<span class="token-keyword">max-width</span>: <span class="token-string">768px</span>) {
+  .<span class="token-class">col-left</span>, .<span class="token-class">col-main</span> {
+    <span class="token-keyword">width</span>: <span class="token-string">100%</span>;
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>display: flex:</strong> Mengaktifkan mode flexbox agar elemen sejajar bertumpuk secara elastis.</li>
+                            <li><strong>flex-wrap: wrap:</strong> Memaksa elemen anak turun ke baris berikutnya jika ruang tidak mencukupi.</li>
+                            <li><strong>@media screen:</strong> Blok pembatas aturan stylesheet responsif berdasarkan media tayang layar.</li>
+                            <li><strong>max-width: 768px:</strong> Mengatur batasan lebar resolusi layar maksimal untuk eksekusi kode CSS responsif.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Miniatur Demonstrasi Responsif Layout:</div>
+                <div class="output-block" style="background-color: var(--yellow); padding: 10px;">
+                    <div style="border: 3px solid #000; box-shadow: 4px 4px 0px #000; background: #fff; color: #000; overflow: hidden;">
+                        
+                        <!-- Header -->
+                        <div style="background-color: var(--purple); color: #fff; padding: 10px; text-align: center; font-weight: bold; border-bottom: 3px solid #000;">
+                            Header Perpustakaan Daerah
+                        </div>
+                        
+                        <!-- Main Content Wrapper -->
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <!-- Sidebar -->
+                            <div style="flex: 1 1 200px; padding: 15px; border-right: 3px solid #000; background: var(--teal); min-width: 150px;">
+                                <h5 style="margin: 0 0 10px 0; border-bottom: 2px solid #000; text-transform: uppercase;">Navigasi</h5>
+                                <p style="font-size: 0.85rem; font-weight: bold; margin-bottom: 5px; border: 2px solid #000; padding: 2px; text-align: center; background: #fff;">Home</p>
+                                <p style="font-size: 0.85rem; font-weight: bold; border: 2px solid #000; padding: 2px; text-align: center; background: #fff;">Buku Baru</p>
+                            </div>
+                            
+                            <!-- Main Body -->
+                            <div style="flex: 2 1 300px; padding: 15px;">
+                                <h5 style="margin-top: 0; text-transform: uppercase; font-size: 1rem;">Kabar Terbaru</h5>
+                                <p style="font-size: 0.9rem; margin-bottom: 10px; font-weight: 500;">Penyusunan tata letak website responsif menggunakan teknik CSS Media Query.</p>
+                                <div style="background: var(--pink); height: 60px; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 3px solid #000;">
+                                    [ Preview Box ]
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div style="background-color: var(--purple); color: #fff; padding: 8px; text-align: center; font-size: 0.8rem; border-top: 3px solid #000; font-weight: bold;">
+                            Copyright &copy; 2026 Abie-Module
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 3: PERTEMUAN 11 - 21 ==================== -->
+        <div id="part3" class="tab-content">
+            <span class="section-label">Manipulasi JS, Event, MVC, & Servlet (11 - 21)</span>
+            
+            <!-- Pertemuan 11 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--blue); color: #fff;">Pertemuan 11: Dasar JavaScript</div>
+                <h3 style="margin-bottom: 1rem;">Pemberian Argumen & Pengembalian Nilai Fungsi</h3>
+                <p>Membahas pembuatan fungsi berparameter penampung nilai serta instruksi return untuk menyuplai balik hasil hitungan.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>JS Function & Variable Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-keyword">var</span> user = <span class="token-string">"Abie"</span>;
+<span class="token-func">document.write</span>(<span class="token-string">"&lt;h2&gt;"</span> + user + <span class="token-string">"&lt;/h2&gt;"</span>);
+
+<span class="token-comment">// Fungsi Argumen:</span>
+<span class="token-keyword">function</span> <span class="token-func">salam</span>(pesan) {
+  <span class="token-func">alert</span>(<span class="token-string">"Pesan: "</span> + pesan);
+}
+
+<span class="token-comment">// Fungsi Mengembalikan Nilai:</span>
+<span class="token-keyword">function</span> <span class="token-func">tambah</span>(x, y) {
+  <span class="token-keyword">return</span> x + y;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>document.write():</strong> Menuliskan langsung muatan string teks/HTML ke dalam dokumen kerja saat dimuat.</li>
+                            <li><strong>salam(pesan):</strong> Deklarasi fungsi baru berparameter lokal (argumen) variabel "pesan".</li>
+                            <li><strong>return x + y:</strong> Menghentikan fungsi dan mengembalikan hasil jumlahan variabel masukan ke baris pemanggil.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Operasional Contoh Fungsi:</div>
+                <div class="output-block" style="text-align: center; background-color: var(--teal);">
+                    <button type="button" class="btn" style="background: #1e1e24; margin: 5px;" onclick="salamSim('Selamat Pagi!')">Panggil salam('Selamat Pagi!')</button>
+                    <button type="button" class="btn" style="background: #1e1e24; margin: 5px;" onclick="salamSim('Selamat Malam!')">Panggil salam('Selamat Malam!')</button>
+                    <button type="button" class="btn" style="background: #1e1e24; margin: 5px;" onclick="tambahSim(5, 7)">Panggil tambah(5, 7)</button>
+                </div>
+            </div>
+
+            <!-- Pertemuan 12 & 15 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--pink);">Pertemuan 12 & 15: Objek Date</div>
+                <h3 style="margin-bottom: 1rem;">Konstruksi Waktu & Tanggal Berjalan Realtime</h3>
+                <p>Mengambil properti tanggal dan waktu lokal klien menggunakan cetak instansiasi objek internal Date.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>JS Date Object Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-keyword">var</span> d = <span class="token-keyword">new</span> <span class="token-func">Date</span>();
+<span class="token-keyword">var</span> hari = d.<span class="token-func">getDay</span>(); <span class="token-comment">// Mengembalikan integer 0-6</span>
+<span class="token-keyword">var</span> tgl = d.<span class="token-func">getDate</span>(); <span class="token-comment">// Mengembalikan tanggal 1-31</span>
+<span class="token-keyword">var</span> bln = d.<span class="token-func">getMonth</span>(); <span class="token-comment">// Mengembalikan bulan 0-11</span>
+<span class="token-keyword">var</span> thn = d.<span class="token-func">getFullYear</span>();
+<span class="token-keyword">var</span> jam = d.<span class="token-func">getHours</span>();
+<span class="token-keyword">var</span> mnt = d.<span class="token-func">getMinutes</span>();</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>new Date():</strong> Perintah instansiasi untuk mencetak objek waktu Date berdasarkan clock komputer klien.</li>
+                            <li><strong>getDay():</strong> Mengambil nilai indeks hari berjalan (0 untuk Minggu, 1 untuk Senin, dst).</li>
+                            <li><strong>getDate():</strong> Mengembalikan nilai tanggal desimal 1 sampai 31.</li>
+                            <li><strong>getMonth():</strong> Mengambil indeks bulan berjalan (dimulai dari indeks 0 untuk Januari s/d 11 untuk Desember).</li>
+                            <li><strong>getFullYear():</strong> Mengambil nilai tahun dalam representasi 4 digit utuh modern.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Output Live Objek Date & Jam Realtime:</div>
+                <div class="output-block" style="background: var(--blue); color: #ffffff; text-align: center; padding: 2rem;">
+                    <div id="liveDateBlock" style="font-size: 1.4rem; font-weight: 800; text-transform: uppercase;">Mengambil tanggal...</div>
+                </div>
+            </div>
+
+            <!-- Pertemuan 13 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--teal);">Pertemuan 13: Objek Document & Window</div>
+                <h3 style="margin-bottom: 1rem;">Pengalihan Alamat Link Lewat Window.Location</h3>
+                <p>Mengatur aksi pemindahan url tujuan halaman kerja secara programatik memanfaatkan properti window location browser.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>JS Navigation Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-keyword">function</span> <span class="token-func">redirectPage</span>() {
+  <span class="token-keyword">var</span> selIndex = document.pilihan.pilih.selectedIndex;
+  <span class="token-keyword">if</span> (selIndex == <span class="token-string">0</span>) {
+    <span class="token-attr">window.location.href</span> = <span class="token-string">"latihan1.html"</span>;
+  } <span class="token-keyword">else</span> <span class="token-keyword">if</span> (selIndex == <span class="token-string">1</span>) {
+    <span class="token-attr">window.location.href</span> = <span class="token-string">"latihan2.html"</span>;
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>window.location.href:</strong> Properti kontrol penunjuk lokasi URL aktif; mengubah nilainya memicu reload halaman ke URL baru.</li>
+                            <li><strong>selectedIndex:</strong> Properti pembaca indeks opsi yang sedang dipilih/diklik pada elemen select dropdown.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Simulasi Aksi Pilihan Select:</div>
+                <div class="output-block" style="background: var(--yellow);">
+                    <div style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; text-align: center; color: #000000;">
+                        <label style="font-weight: 800; text-transform: uppercase;">Pilih Halaman Tujuan:</label>
+                        <select id="selRedirectSim" size="3" style="font-weight: bold; border-width: 3px;">
+                            <option value="latihan1.html" selected>Latihan Objek Radio</option>
+                            <option value="latihan2.html">Latihan Objek Select</option>
+                            <option value="latihan3.html">Latihan Objek Teks Area</option>
+                        </select>
+                        <button type="button" class="btn btn-blue" onclick="runRedirectSim()">Simulasi Goo!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pertemuan 14 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--orange);">Pertemuan 14: Objek Select</div>
+                <h3 style="margin-bottom: 1rem;">Pemindahan Nilai Opsi Form Dropdown Select</h3>
+                <p>Mengambil teks data dari elemen input select untuk ditampilkan langsung pada isian textbox penampung.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>Dropdown Select Object</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-keyword">function</span> <span class="token-func">kirimPilihan</span>() {
+  <span class="token-keyword">var</span> jurusan = document.fform.Jurusan.value;
+  document.fform.Ojurusan.value = jurusan;
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>Jurusan.value:</strong> Mengambil isi atribut value opsi select dropdown yang aktif dipilih.</li>
+                            <li><strong>Ojurusan.value = ...:</strong> Mengisi kolom isian output teks agar terisi string dari dropdown.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Simulasi Pilih Jurusan:</div>
+                <div class="output-block" style="background-color: var(--pink);">
+                    <div style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; color: #000;">
+                        <div>
+                            <label style="font-weight: bold; display: block; margin-bottom: 0.25rem;">Jurusan Di Kampus:</label>
+                            <select id="iptJurusanSim" style="font-weight: bold; border-width: 3px;">
+                                <option value="Teknik Informatika">Teknik Informatika</option>
+                                <option value="Sistem Informasi">Sistem Informasi</option>
+                                <option value="Teknik Komputer">Teknik Komputer</option>
+                            </select>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button type="button" class="btn btn-yellow" onclick="kirimPilihJurusanSim()">Kirim</button>
+                            <button type="button" class="btn btn-teal" onclick="document.getElementById('optJurusanSim').value=''">Reset</button>
+                        </div>
+                        <div>
+                            <label style="font-weight: bold; display: block; margin-bottom: 0.25rem;">Output Terkirim:</label>
+                            <input type="text" id="optJurusanSim" readonly style="background: var(--bg-body); border-width: 3px; font-weight: bold; text-align: center;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pertemuan 17 & 18 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--pink);">Pertemuan 17 & 18: Event Handler & Timer</div>
+                <h3 style="margin-bottom: 1rem;">Validasi Form Submit & Timer Penundaan setTimeout</h3>
+                <p>Menggunakan `onsubmit` untuk memvalidasi isian form, dan `setTimeout` untuk membuat pemanggilan berulang (digital clock).</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>Submit & Timer Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-keyword">function</span> <span class="token-func">cekNama</span>(form) {
+  <span class="token-keyword">if</span> (form.nama.value == <span class="token-string">""</span>) {
+    <span class="token-func">alert</span>(<span class="token-string">"Nama harus diisi!"</span>);
+    <span class="token-keyword">return</span> <span class="token-keyword">false</span>;
+  }
+  <span class="token-keyword">return</span> <span class="token-keyword">true</span>;
+}
+
+<span class="token-keyword">function</span> <span class="token-func">clock</span>() {
+  <span class="token-keyword">var</span> t = <span class="token-keyword">new</span> <span class="token-func">Date</span>();
+  document.getElementById(<span class="token-string">"jam"</span>).innerHTML = t.<span class="token-func">getHours</span>();
+  <span class="token-func">setTimeout</span>(<span class="token-string">"clock()"</span>, <span class="token-string">1000</span>);
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>onsubmit="return validate()":</strong> Interseptor proses pengiriman form. Jika bernilai FALSE, browser akan menahan/membatalkan submit.</li>
+                            <li><strong>setTimeout("fungsi()", delay):</strong> Mengatur eksekusi tertunda suatu fungsi dalam skala waktu milidetik (1000ms = 1 detik).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Simulasi Aksi Submit & Jam Digital:</div>
+                <div class="output-block" style="text-align: center;">
+                    <form onsubmit="event.preventDefault(); if(this.namaField.value == ''){ alert('Nama tidak boleh kosong!'); } else { alert('Validasi berhasil! Nama anda: ' + this.namaField.value); }">
+                        <div style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+                            <input type="text" name="namaField" placeholder="Ketik nama anda di sini...">
+                            <button type="submit" class="btn btn-yellow">Kirim Form</button>
+                        </div>
+                    </form>
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem; text-transform: uppercase;">Jam Digital (setTimeout):</h4>
+                        <span id="liveDigitalClock" style="font-family: monospace; font-size: 2.25rem; font-weight: 800; background-color: var(--teal); padding: 0.5rem 2rem; border: 3px solid #000; box-shadow: 4px 4px 0px #000; color: #000; display: inline-block;">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pertemuan 19 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--teal);">Pertemuan 19: JavaScript Marquee</div>
+                <h3 style="margin-bottom: 1rem;">Pembuatan Animasi Teks Berjalan Menggunakan JS</h3>
+                <p>Menggeser urutan susunan string teks secara periodik menggunakan operasi manipulasi index substring.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>JS Marquee Code</span>
+                        </div>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Salin</button>
+                            <pre class="code-block"><code><span class="token-keyword">var</span> teks = <span class="token-string">"Halo Teman! "</span>;
+<span class="token-keyword">function</span> <span class="token-func">marquee</span>() {
+  document.formMarq.kotak.value = teks;
+  <span class="token-comment">// Pindahkan huruf pertama ke indeks terakhir</span>
+  teks = teks.<span class="token-func">substr</span>(<span class="token-string">1</span>, teks.length) + teks.<span class="token-func">substr</span>(<span class="token-string">0</span>, <span class="token-string">1</span>);
+  <span class="token-func">setTimeout</span>(<span class="token-string">"marquee()"</span>, <span class="token-string">150</span>);
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>substr(awal, panjang):</strong> Memotong string teks mulai dari indeks awal hingga panjang yang ditentukan.</li>
+                            <li><strong>teks.substr(1, len) + teks.substr(0, 1):</strong> Algoritma pergeseran teks; mengambil huruf depan lalu melampirkannya ke ekor string.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-label">Output Tampilan JS Marquee:</div>
+                <div class="output-block" style="text-align: center; background-color: var(--orange);">
+                    <input type="text" id="liveMarqueeInput" readonly style="width: 100%; max-width: 350px; font-size: 1.25rem; font-family: monospace; border-width: 3px; text-align: center; color: #000; background-color: #fff; box-shadow: 4px 4px 0px #000;">
+                </div>
+            </div>
+
+            <!-- Pertemuan 20 -->
+            <div class="neo-box" style="margin-bottom: 2rem;">
+                <div class="badge" style="background-color: var(--yellow);">Pertemuan 20: Konsep MVC & Web Container</div>
+                <h3 style="margin-bottom: 1rem;">Arsitektur MVC & Server Apache Tomcat</h3>
+                <p>Membagi pemrosesan program web menjadi tiga pilar penyusun utama serta pengemasan distribusi aplikasi.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    
+                    <div style="border: 3px solid var(--border-color); padding: 1.25rem; box-shadow: 4px 4px 0px var(--border-color); background: var(--bg-card);">
+                        <h4 style="margin-bottom: 0.5rem; text-transform: uppercase; color: var(--purple);">Arsitektur MVC</h4>
+                        <ul class="explanation-list">
+                            <li><strong>Model:</strong> Berfungsi mengelola representasi data, database, dan logika bisnis program.</li>
+                            <li><strong>View:</strong> Mengatur representasi tampilan grafis yang disodorkan kepada pengguna di browser.</li>
+                            <li><strong>Controller:</strong> Bertindak sebagai mediator, menangkap input dari view lalu memperbarui model.</li>
+                        </ul>
+                    </div>
+
+                    <div style="border: 3px solid var(--border-color); padding: 1.25rem; box-shadow: 4px 4px 0px var(--border-color); background: var(--bg-card);">
+                        <h4 style="margin-bottom: 0.5rem; text-transform: uppercase; color: var(--teal);">Web Container & WAR</h4>
+                        <ul class="explanation-list">
+                            <li><strong>Apache Tomcat:</strong> Web Server & Java Servlet Container yang mengeksekusi script JSP/Servlet.</li>
+                            <li><strong>WAR (Web Archive):</strong> Format berkas arsip terkompresi yang mengemas struktur direktori web Java.</li>
+                            <li><strong>NetBeans IDE:</strong> Media pengerjaan program Java Web untuk build & deploy berkas WAR secara terintegrasi.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Pertemuan 21 -->
+            <div class="neo-box">
+                <div class="badge" style="background-color: var(--blue); color: #fff;">Pertemuan 21: Servlet API</div>
+                <h3 style="margin-bottom: 1rem;">Daur Hidup & Fungsional Respons Servlet Java</h3>
+                <p>Servlet bertindak sebagai API pemroses request dinamis di server Java yang memiliki tahapan siklus kerja tertentu.</p>
+                
+                <div class="layout-split">
+                    <div class="code-panel">
+                        <div class="code-header">
+                            <span>Servlet Java Concept Structure</span>
+                        </div>
+                        <div class="code-container">
+                            <pre class="code-block"><code><span class="token-keyword">public class</span> <span class="token-func">MyServlet</span> <span class="token-keyword">extends</span> <span class="token-func">HttpServlet</span> {
+  <span class="token-comment">// Daur Hidup Servlet</span>
+  <span class="token-keyword">public void</span> <span class="token-func">init</span>() { ... }
+  <span class="token-keyword">protected void</span> <span class="token-func">service</span>(req, res) { ... }
+  <span class="token-keyword">public void</span> <span class="token-func">destroy</span>() { ... }
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="explanation-panel">
+                        <h4 class="explanation-title">Fungsi & Penjelasan Kode</h4>
+                        <ul class="explanation-list">
+                            <li><strong>init():</strong> Dipanggil satu kali oleh Container saat instansiasi servlet pertama kali dibuat.</li>
+                            <li><strong>service():</strong> Metode inti penentu rute permintaan yang membagi eksekusi ke doGet atau doPost.</li>
+                            <li><strong>destroy():</strong> Dipanggil sebelum Servlet instance dimusnahkan/dihapus dari alokasi memory server.</li>
+                            <li><strong>addCookie(Cookie c):</strong> Menyisipkan data kuki pelacak ke dalam header respon web klien.</li>
+                            <li><strong>encodeRedirectURL(String url):</strong> Melakukan enkoding url referensi tujuan pengalihan link web.</li>
+                            <li><strong>sendError(int sc):</strong> Mengirimkan balik sinyal kode kesalahan status respon HTTP (seperti 404, 500).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SCRIPTS INTERAKTIF & EVENT HANDLING -->
+    <script src="script.js" defer></script></body>
+</html>
